@@ -1,9 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const getFr_1 = require("../helper/getFr");
+const Afinador_1 = require("../model/Afinador");
+const ViewAfinador_1 = require("../view/ViewAfinador");
 class ControllerAfinador {
     constructor() {
         this.fre = Math.pow(2, 15);
         this.Constrant = { audio: true };
+        this.$ = document.querySelector.bind(document);
+        this.main = this.$('main');
+        this.afinador = new Afinador_1.Afinador();
+        this.viewAfinado = new ViewAfinador_1.ViewAfinador(this.main);
         console.log("afinador");
         if (navigator.mediaDevices.getUserMedia) {
             console.log('getUserMedia supported');
@@ -31,10 +38,9 @@ class ControllerAfinador {
     draw() {
         this.analyser.getByteFrequencyData(this.dataArray);
         requestAnimationFrame(this.draw.bind(this));
-        let data = [...this.dataArray].sort((a, b) => a - b);
-        let max = data[data.length - 1];
-        let pos = this.dataArray.indexOf(max);
-        console.log(`${max}, ${pos} ,${pos * this.audioCtx.sampleRate / (data.length * 2)}`);
+        const fr = getFr_1.getFr(this.dataArray, this.audioCtx.sampleRate);
+        this.afinador.play(fr);
+        this.viewAfinado.set(this.afinador);
     }
 }
 exports.ControllerAfinador = ControllerAfinador;
