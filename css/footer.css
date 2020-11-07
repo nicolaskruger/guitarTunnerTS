@@ -1,0 +1,16 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+.pe a{
+    color: white;
+    transition: 100ms;
+    text-decoration: none;
+}
+.pe a:hover{
+    color: gray;
+}

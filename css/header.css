@@ -1,0 +1,13 @@
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    background-color: gray;
+}
+.cabecalho > a > img{
+    width: 100px;
+}
+.cabecalho > h1{
+    font-size: 25px;
+}

@@ -1,0 +1,39 @@
+:root{
+    --uniBlue: rgb(0,21.6,54.5)
+}
+.frequencia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frequencia > h2{
+    background-color: var(--uniBlue);
+    text-align: center;
+    color: gray;
+    font-size: 10vw;
+    border: solid 20px var(--uniBlue);
+    border-radius: 20px;
+}
+.cordas{
+    display: flex;
+    justify-content: center;
+}
+.nota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vw;
+}
+.nota > div{
+    width: 10px;
+    height: 10px;
+    border: solid 2px black;
+    border-radius: 100%;
+    background-color: black;
+}
+
+@media (max-width: 400px){
+    .nota{
+        font-size: 4vw;
+    }
+}
