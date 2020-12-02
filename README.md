@@ -1,4 +1,7 @@
-# guiteTunerTS
+# :guitar: guiteTunerTS
 Browser guitar tunner, with typescript
-## install
+## :pushpin: usage
+```bash
 npm install
+```
+
